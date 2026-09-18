@@ -1046,3 +1046,67 @@ footer {
     }
 
 }
+
+/* RESULTADOS DE BÚSQUEDA */
+
+.search-results {
+    margin-top: 30px;
+
+    display: grid;
+
+    gap: 15px;
+}
+
+
+.search-result {
+    padding: 20px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    transition: 0.3s;
+}
+
+
+.search-result:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--accent);
+}
+
+
+.search-result-type {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--accent);
+
+    text-transform: uppercase;
+}
+
+
+.search-result h3 {
+    margin-bottom: 8px;
+
+    font-size: 22px;
+}
+
+
+.search-result p {
+    margin-bottom: 12px;
+
+    color: var(--muted);
+
+    line-height: 1.6;
+}
+
+
+.search-result small {
+    color: var(--muted);
+}
