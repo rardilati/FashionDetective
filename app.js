@@ -199,3 +199,76 @@ performSearch.addEventListener("click", function () {
 
 
 });
+
+
+// DATOS DE PELÍCULAS
+
+const movies = [
+
+    {
+        titulo: "El diablo viste de Prada",
+        año: 2006,
+        pais: "Estados Unidos",
+        genero: "Moda",
+        descripcion:
+            "Una joven comienza a trabajar como asistente de una poderosa editora de moda."
+    },
+
+    {
+        titulo: "Cruella",
+        año: 2021,
+        pais: "Estados Unidos",
+        genero: "Moda",
+        descripcion:
+            "Una historia de identidad, diseño y ambición ambientada en el mundo de la moda."
+    },
+
+    {
+        titulo: "Confessions of a Shopaholic",
+        año: 2009,
+        pais: "Estados Unidos",
+        genero: "Moda",
+        descripcion:
+            "Una periodista intenta abrirse camino mientras lidia con su pasión por la moda y las compras."
+    }
+
+];
+
+// MOSTRAR PELÍCULAS
+
+
+movies.forEach(function (movie) {
+
+    movieGrid.innerHTML += `
+
+        <article class="movie-card">
+
+            <div class="movie-image">
+                🎬
+            </div>
+
+            <div class="movie-info">
+
+                <span class="movie-type">
+                    ${movie.genero}
+                </span>
+
+                <h3>
+                    ${movie.titulo}
+                </h3>
+
+                <p>
+                    ${movie.descripcion}
+                </p>
+
+                <small>
+                    ${movie.año} · ${movie.pais}
+                </small>
+
+            </div>
+
+        </article>
+
+    `;
+
+});
