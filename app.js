@@ -203,7 +203,7 @@ performSearch.addEventListener("click", function () {
 
 // DATOS DE PELÍCULAS
 
-const movies = [
+/* const movies = [
 
     {
         titulo: "El diablo viste de Prada",
@@ -232,7 +232,126 @@ const movies = [
             "Una periodista intenta abrirse camino mientras lidia con su pasión por la moda y las compras."
     }
 
+];*/
+
+const movies = [
+
+    {
+        titulo: "El diablo viste de Prada",
+        año: 2006,
+        pais: "Estados Unidos",
+        genero: "Moda",
+
+        descripcion:
+            "Una joven comienza a trabajar como asistente de una poderosa editora de moda.",
+
+        director: "David Frankel",
+
+        vestuario: "Vestuario contemporáneo inspirado en la industria editorial de moda.",
+
+        diseñadores: [
+            "Patricia Field"
+        ],
+
+        prendas: [
+            "Trajes",
+            "Vestidos",
+            "Abrigos",
+            "Accesorios"
+        ],
+
+        marcas: [
+            "Chanel",
+            "Valentino",
+            "Prada"
+        ],
+
+        textiles: [
+            "Seda",
+            "Lana",
+            "Algodón"
+        ]
+    },
+
+
+    {
+        titulo: "Cruella",
+        año: 2021,
+        pais: "Estados Unidos",
+        genero: "Moda",
+
+        descripcion:
+            "Una historia de identidad, diseño y ambición ambientada en el mundo de la moda.",
+
+        director: "Craig Gillespie",
+
+        vestuario: "Vestuario teatral y experimental construido alrededor de la identidad de Cruella.",
+
+        diseñadores: [
+            "Jenny Beavan"
+        ],
+
+        prendas: [
+            "Vestidos",
+            "Abrigos",
+            "Trajes",
+            "Accesorios"
+        ],
+
+        marcas: [
+            "Referencia ficticia a la casa de moda de la historia"
+        ],
+
+        textiles: [
+            "Cuero",
+            "Seda",
+            "Tweed"
+        ]
+    },
+
+
+    {
+        titulo: "Confessions of a Shopaholic",
+        año: 2009,
+        pais: "Estados Unidos",
+        genero: "Moda",
+
+        descripcion:
+            "Una periodista intenta abrirse camino mientras lidia con su pasión por la moda y las compras.",
+
+        director: "P. J. Hogan",
+
+        vestuario: "Moda urbana y accesorios utilizados para construir la personalidad de la protagonista.",
+
+        diseñadores: [
+            "Patricia Field"
+        ],
+
+        prendas: [
+            "Vestidos",
+            "Abrigos",
+            "Zapatos",
+            "Bolsos"
+        ],
+
+        marcas: [
+            "Diseñadores y marcas de moda contemporánea"
+        ],
+
+        textiles: [
+            "Lana",
+            "Seda",
+            "Algodón"
+        ]
+    }
+
 ];
+
+// ELEMENTO DE PELÍCULAS
+
+
+const movieGrid =
+    document.getElementById("movieGrid");
 
 // MOSTRAR PELÍCULAS
 

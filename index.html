@@ -9,11 +9,20 @@
 </head>
 
 <body>
+    <!-- HEADER -->
+
     <header class="navbar">
 
         <div class="logo">
-            <span>(Logo)</span>
-            FASHION DETECTIVE
+
+            <div class="logo-mark">
+                FD
+            </div>
+            <div class="logo-text">
+                <span>FASHION</span>
+                <span>DETECTIVE</span>
+            </div>
+
         </div>
 
         <nav>
@@ -60,6 +69,7 @@
                 </button>
 
             </div>
+
             <!-- RESULTADOS DE BÚSQUEDA -->
 
             <div id="searchResults" class="search-results"></div>
@@ -115,7 +125,7 @@
 
 
         <!-- CASO DESTACADO -->
-         
+
 
         <section class="featured">
 
@@ -323,32 +333,58 @@
 
         </section>
 
-    </main>
 
-    <!-- PELÍCULAS -->
 
-    <section class="movies" id="movies">
+        <!-- PELÍCULAS -->
 
-        <div class="section-heading">
+        <section class="movies" id="movies">
 
-            <div>
+            <div class="section-heading">
 
-                <p class="eyebrow">
-                    DESCUBRIR
-                </p>
+                <div>
 
-                <h2>
-                    Películas que esconden historias
-                </h2>
+                    <p class="eyebrow">
+                        DESCUBRIR
+                    </p>
+
+                    <h2>
+                        Películas que esconden historias
+                    </h2>
+
+                </div>
 
             </div>
 
-        </div>
+            <!--
+                JavaScript rellenará este contenedor
+                con las tarjetas de películas.
+            -->
 
 
-        <div class="movie-grid" id="movieGrid"></div>
+            <div class="movie-grid" id="movieGrid"></div>
 
-    </section>
+        </section>
+
+        <!-- =====================================
+             FICHA DE PELÍCULA
+             ===================================== -->
+
+        <section class="movie-detail" id="movieDetail">
+
+            <!--
+                JavaScript rellenará este contenedor
+                con la información de la película
+                seleccionada.
+            -->
+
+            <div id="movieDetailContent"></div>
+
+        </section>
+
+
+    </main>
+
+
 
 
     <!-- FOOTER -->
