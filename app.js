@@ -347,11 +347,13 @@ const movies = [
 
 ];
 
-// ELEMENTO DE PELÍCULAS
 
+
+// ELEMENTO DONDE APARECERÁN LAS PELÍCULAS
 
 const movieGrid =
     document.getElementById("movieGrid");
+
 
 // MOSTRAR PELÍCULAS
 
@@ -363,31 +365,263 @@ movies.forEach(function (movie) {
         <article class="movie-card">
 
             <div class="movie-image">
+
                 🎬
+
             </div>
+
 
             <div class="movie-info">
 
                 <span class="movie-type">
+
                     ${movie.genero}
+
                 </span>
 
+
                 <h3>
+
                     ${movie.titulo}
+
                 </h3>
 
+
                 <p>
+
                     ${movie.descripcion}
+
                 </p>
 
+
                 <small>
+
                     ${movie.año} · ${movie.pais}
+
                 </small>
+
+
+                <button
+                    class="movie-button"
+                    data-title="${movie.titulo}"
+                >
+
+                    🕵️ Investigar
+
+                </button>
 
             </div>
 
         </article>
 
     `;
+
+});
+
+
+// ELEMENTOS DE LA FICHA DE PELÍCULA
+
+
+const movieDetail =
+    document.getElementById("movieDetail");
+
+const movieDetailContent =
+    document.getElementById("movieDetailContent");
+
+
+
+// BOTONES "INVESTIGAR"
+
+
+const movieButtons =
+    document.querySelectorAll(".movie-button");
+
+
+
+// EVENTO DE LOS BOTONES
+
+
+movieButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+
+        // OBTENER EL TÍTULO DE LA PELÍCULA
+      
+
+        const movieTitle =
+            button.dataset.title;
+
+
+        // BUSCAR LA PELÍCULA EN NUESTRO ARRAY
+        
+
+        const selectedMovie =
+            movies.find(function (movie) {
+
+                return movie.titulo === movieTitle;
+
+            });
+
+
+        // CREAR LA FICHA DE INVESTIGACIÓN
+        
+
+        movieDetailContent.innerHTML = `
+
+            <div class="movie-detail-header">
+
+                <p class="eyebrow">
+                    INVESTIGACIÓN
+                </p>
+
+
+                <h2>
+                    ${selectedMovie.titulo}
+                </h2>
+
+
+                <p>
+                    ${selectedMovie.descripcion}
+                </p>
+
+            </div>
+
+
+            <div class="movie-detail-info">
+
+
+                <div>
+
+                    <strong>
+                        Año
+                    </strong>
+
+                    <span>
+                        ${selectedMovie.año}
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        País
+                    </strong>
+
+                    <span>
+                        ${selectedMovie.pais}
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Director
+                    </strong>
+
+                    <span>
+                        ${selectedMovie.director}
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="investigation-grid">
+
+
+                <article>
+
+                    <h3>
+                        👗 Vestuario
+                    </h3>
+
+                    <p>
+                        ${selectedMovie.vestuario}
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        🎨 Diseñadores
+                    </h3>
+
+                    <p>
+                        ${selectedMovie.diseñadores.join(", ")}
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        👗 Prendas
+                    </h3>
+
+                    <p>
+                        ${selectedMovie.prendas.join(", ")}
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        🏛️ Marcas
+                    </h3>
+
+                    <p>
+                        ${selectedMovie.marcas.join(", ")}
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        🧵 Textiles
+                    </h3>
+
+                    <p>
+                        ${selectedMovie.textiles.join(", ")}
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        `;
+
+
+    
+        // MOSTRAR LA FICHA
+        
+
+        movieDetail.classList.add("active");
+
+
+        // LLEVAR AL USUARIO A LA FICHA
+        
+
+        movieDetail.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    });
 
 });
