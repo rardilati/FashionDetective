@@ -11,96 +11,120 @@ searchButton.addEventListener("click", function () {
 }); */
 
 
+// =========================================
+// FASHION DETECTIVE
+// JavaScript principal
+// =========================================
+
+
 // ELEMENTOS DEL BUSCADOR
 
 
-const searchButton = document.getElementById("searchButton");
+const searchButton =
+    document.getElementById("searchButton");
 
-const searchPanel = document.getElementById("searchPanel");
+const searchPanel =
+    document.getElementById("searchPanel");
 
-const closeSearch = document.getElementById("closeSearch");
+const closeSearch =
+    document.getElementById("closeSearch");
 
-const searchInput = document.getElementById("searchInput");
+const searchInput =
+    document.getElementById("searchInput");
 
-const performSearch = document.getElementById("performSearch");
+const performSearch =
+    document.getElementById("performSearch");
 
-const searchResults = document.getElementById("searchResults");
+const searchResults =
+    document.getElementById("searchResults");
+
 
 
 // DATOS DE BÚSQUEDA
 
 const fashionData = [
+
     {
         nombre: "Kimono",
         tipo: "Prenda",
         pais: "Japón",
-        descripcion: "Prenda tradicional japonesa que ha influido en la moda contemporánea."
+        descripcion:
+            "Prenda tradicional japonesa que ha influido en la moda contemporánea."
     },
 
     {
         nombre: "Harajuku",
         tipo: "Cultura",
         pais: "Japón",
-        descripcion: "Distrito de Tokio conocido por su moda urbana, estilos alternativos y cultura juvenil."
+        descripcion:
+            "Distrito de Tokio conocido por su moda urbana, estilos alternativos y cultura juvenil."
     },
 
     {
         nombre: "Hanbok",
         tipo: "Prenda",
         pais: "Corea del Sur",
-        descripcion: "Traje tradicional coreano caracterizado por sus líneas, colores y silueta."
+        descripcion:
+            "Traje tradicional coreano caracterizado por sus líneas, colores y silueta."
     },
 
     {
         nombre: "K-fashion",
         tipo: "Diseño",
         pais: "Corea del Sur",
-        descripcion: "Escena de moda contemporánea coreana con gran presencia internacional."
+        descripcion:
+            "Escena de moda contemporánea coreana con gran presencia internacional."
     },
 
     {
         nombre: "Qipao",
         tipo: "Prenda",
         pais: "China",
-        descripcion: "Vestido tradicional chino asociado especialmente con la moda de Shanghai."
+        descripcion:
+            "Vestido tradicional chino asociado especialmente con la moda de Shanghai."
     },
 
     {
         nombre: "Moda de Shanghai",
         tipo: "Cultura",
         pais: "China",
-        descripcion: "Mezcla de tradición china, influencias occidentales y tendencias contemporáneas."
+        descripcion:
+            "Mezcla de tradición china, influencias occidentales y tendencias contemporáneas."
     },
 
     {
         nombre: "Alta costura",
         tipo: "Categoría",
         pais: "Francia",
-        descripcion: "Moda artesanal caracterizada por la elaboración de prendas únicas y técnicas especializadas."
+        descripcion:
+            "Moda artesanal caracterizada por la elaboración de prendas únicas y técnicas especializadas."
     },
 
     {
         nombre: "Haute Couture",
         tipo: "Diseño",
         pais: "Francia",
-        descripcion: "Tradición francesa de creación de prendas de alta costura y fuerte componente artesanal."
+        descripcion:
+            "Tradición francesa de creación de prendas de alta costura y fuerte componente artesanal."
     },
 
     {
         nombre: "Made in Italy",
         tipo: "Industria",
         pais: "Italia",
-        descripcion: "Concepto asociado a la tradición italiana en diseño, confección, materiales y calidad."
+        descripcion:
+            "Concepto asociado a la tradición italiana en diseño, confección, materiales y calidad."
     },
 
     {
         nombre: "Streetwear",
         tipo: "Tendencia",
         pais: "Estados Unidos",
-        descripcion: "Estilo urbano que ha tenido una gran influencia en la moda contemporánea."
+        descripcion:
+            "Estilo urbano que ha tenido una gran influencia en la moda contemporánea."
     }
-]
 
+];
 
 
 // ABRIR BUSCADOR
@@ -115,66 +139,78 @@ searchButton.addEventListener("click", function () {
 });
 
 
-
 // CERRAR BUSCADOR
-
 
 closeSearch.addEventListener("click", function () {
 
     searchPanel.classList.remove("active");
 
+    searchInput.value = "";
+
+    searchResults.innerHTML = "";
+
 });
 
 
-
-// REALIZAR BÚSQUEDA
+//REALIZAR BÚSQUEDA
 
 performSearch.addEventListener("click", function () {
 
-    // Obtener el texto escrito por el usuario
-
-    const searchText = searchInput.value.toLowerCase().trim();
-
-    console.log("Búsqueda:", searchText);
-
+    const searchText =
+        searchInput.value
+            .toLowerCase()
+            .trim();
 
 
-    // BUSCAR EN NUESTROS DATOS
-
-    const results = fashionData.filter(function (item) {
-
-        return (
-            item.nombre.toLowerCase().includes(searchText) ||
-            item.tipo.toLowerCase().includes(searchText) ||
-            item.pais.toLowerCase().includes(searchText)
-        );
-    });
+    console.log("🔎 Búsqueda:", searchText);
 
 
-    // LIMPIAR RESULTADOS ANTERIORES
+    const results =
+        fashionData.filter(function (item) {
+
+            return (
+
+                item.nombre
+                    .toLowerCase()
+                    .includes(searchText)
+
+                ||
+
+                item.tipo
+                    .toLowerCase()
+                    .includes(searchText)
+
+                ||
+
+                item.pais
+                    .toLowerCase()
+                    .includes(searchText)
+
+            );
+
+        });
+
 
     searchResults.innerHTML = "";
 
 
-
-    // SI NO HAY RESULTADOS
-
     if (results.length === 0) {
+
         searchResults.innerHTML = `
-        <p>
-            No se encontraron resultados.
-        </p>
-    `;
+            <p>
+                🕵️ No se encontraron resultados.
+            </p>
+        `;
 
         return;
     }
 
-    // MOSTRAR RESULTADOS
 
     results.forEach(function (item) {
 
         searchResults.innerHTML += `
-    <article class="search-result">
+
+            <article class="search-result">
 
                 <span class="search-result-type">
                     ${item.tipo}
@@ -195,51 +231,23 @@ performSearch.addEventListener("click", function () {
             </article>
 
         `;
-    });
 
+    });
 
 });
 
 
 // DATOS DE PELÍCULAS
 
-/* const movies = [
-
-    {
-        titulo: "El diablo viste de Prada",
-        año: 2006,
-        pais: "Estados Unidos",
-        genero: "Moda",
-        descripcion:
-            "Una joven comienza a trabajar como asistente de una poderosa editora de moda."
-    },
-
-    {
-        titulo: "Cruella",
-        año: 2021,
-        pais: "Estados Unidos",
-        genero: "Moda",
-        descripcion:
-            "Una historia de identidad, diseño y ambición ambientada en el mundo de la moda."
-    },
-
-    {
-        titulo: "Confessions of a Shopaholic",
-        año: 2009,
-        pais: "Estados Unidos",
-        genero: "Moda",
-        descripcion:
-            "Una periodista intenta abrirse camino mientras lidia con su pasión por la moda y las compras."
-    }
-
-];*/
-
 const movies = [
 
     {
         titulo: "El diablo viste de Prada",
+
         año: 2006,
+
         pais: "Estados Unidos",
+
         genero: "Moda",
 
         descripcion:
@@ -247,7 +255,8 @@ const movies = [
 
         director: "David Frankel",
 
-        vestuario: "Vestuario contemporáneo inspirado en la industria editorial de moda.",
+        vestuario:
+            "Vestuario contemporáneo inspirado en la industria editorial de moda.",
 
         diseñadores: [
             "Patricia Field"
@@ -276,8 +285,11 @@ const movies = [
 
     {
         titulo: "Cruella",
+
         año: 2021,
+
         pais: "Estados Unidos",
+
         genero: "Moda",
 
         descripcion:
@@ -285,7 +297,8 @@ const movies = [
 
         director: "Craig Gillespie",
 
-        vestuario: "Vestuario teatral y experimental construido alrededor de la identidad de Cruella.",
+        vestuario:
+            "Vestuario teatral y experimental construido alrededor de la identidad de Cruella.",
 
         diseñadores: [
             "Jenny Beavan"
@@ -299,7 +312,7 @@ const movies = [
         ],
 
         marcas: [
-            "Referencia ficticia a la casa de moda de la historia"
+            "Casa de moda de la historia"
         ],
 
         textiles: [
@@ -312,8 +325,11 @@ const movies = [
 
     {
         titulo: "Confessions of a Shopaholic",
+
         año: 2009,
+
         pais: "Estados Unidos",
+
         genero: "Moda",
 
         descripcion:
@@ -321,7 +337,8 @@ const movies = [
 
         director: "P. J. Hogan",
 
-        vestuario: "Moda urbana y accesorios utilizados para construir la personalidad de la protagonista.",
+        vestuario:
+            "Moda urbana y accesorios utilizados para construir la personalidad de la protagonista.",
 
         diseñadores: [
             "Patricia Field"
@@ -348,11 +365,25 @@ const movies = [
 ];
 
 
-
-// ELEMENTO DONDE APARECERÁN LAS PELÍCULAS
+// ELEMENTOS DE PELÍCULAS
 
 const movieGrid =
     document.getElementById("movieGrid");
+
+
+
+// ELEMENTOS DEL MODAL
+
+
+const movieModal =
+    document.getElementById("movieModal");
+
+const movieModalContent =
+    document.getElementById("movieModalContent");
+
+const closeMovieModal =
+    document.getElementById("closeMovieModal");
+
 
 
 // MOSTRAR PELÍCULAS
@@ -365,39 +396,29 @@ movies.forEach(function (movie) {
         <article class="movie-card">
 
             <div class="movie-image">
-
                 🎬
-
             </div>
 
 
             <div class="movie-info">
 
                 <span class="movie-type">
-
                     ${movie.genero}
-
                 </span>
 
 
                 <h3>
-
                     ${movie.titulo}
-
                 </h3>
 
 
                 <p>
-
                     ${movie.descripcion}
-
                 </p>
 
 
                 <small>
-
                     ${movie.año} · ${movie.pais}
-
                 </small>
 
 
@@ -405,9 +426,7 @@ movies.forEach(function (movie) {
                     class="movie-button"
                     data-title="${movie.titulo}"
                 >
-
                     🕵️ Investigar
-
                 </button>
 
             </div>
@@ -419,17 +438,6 @@ movies.forEach(function (movie) {
 });
 
 
-// ELEMENTOS DE LA FICHA DE PELÍCULA
-
-
-const movieDetail =
-    document.getElementById("movieDetail");
-
-const movieDetailContent =
-    document.getElementById("movieDetailContent");
-
-
-
 // BOTONES "INVESTIGAR"
 
 
@@ -437,24 +445,18 @@ const movieButtons =
     document.querySelectorAll(".movie-button");
 
 
-
-// EVENTO DE LOS BOTONES
-
-
 movieButtons.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
 
-        // OBTENER EL TÍTULO DE LA PELÍCULA
-      
+        // OBTENER EL TÍTULO
 
         const movieTitle =
             button.dataset.title;
 
 
-        // BUSCAR LA PELÍCULA EN NUESTRO ARRAY
-        
+        // BUSCAR LA PELÍCULA
 
         const selectedMovie =
             movies.find(function (movie) {
@@ -463,13 +465,11 @@ movieButtons.forEach(function (button) {
 
             });
 
+        // CREAR LA INVESTIGACIÓN
 
-        // CREAR LA FICHA DE INVESTIGACIÓN
-        
+        movieModalContent.innerHTML = `
 
-        movieDetailContent.innerHTML = `
-
-            <div class="movie-detail-header">
+            <div class="movie-modal-header">
 
                 <p class="eyebrow">
                     INVESTIGACIÓN
@@ -488,7 +488,7 @@ movieButtons.forEach(function (button) {
             </div>
 
 
-            <div class="movie-detail-info">
+            <div class="movie-modal-info">
 
 
                 <div>
@@ -605,23 +605,57 @@ movieButtons.forEach(function (button) {
 
         `;
 
+        // ABRIR MODAL
 
-    
-        // MOSTRAR LA FICHA
-        
+        movieModal.classList.add("active");
 
-        movieDetail.classList.add("active");
-
-
-        // LLEVAR AL USUARIO A LA FICHA
-        
-
-        movieDetail.scrollIntoView({
-
-            behavior: "smooth"
-
-        });
+        document.body.classList.add("modal-open");
 
     });
+
+});
+
+
+
+// CERRAR MODAL
+
+closeMovieModal.addEventListener("click", function () {
+
+    movieModal.classList.remove("active");
+
+    document.body.classList.remove("modal-open");
+
+});
+
+
+// CERRAR AL HACER CLIC FUERA
+
+movieModal.addEventListener("click", function (event) {
+
+    if (event.target === movieModal) {
+
+        movieModal.classList.remove("active");
+
+        document.body.classList.remove("modal-open");
+
+    }
+
+});
+
+
+// CERRAR CON LA TECLA ESC
+
+document.addEventListener("keydown", function (event) {
+
+    if (
+        event.key === "Escape" &&
+        movieModal.classList.contains("active")
+    ) {
+
+        movieModal.classList.remove("active");
+
+        document.body.classList.remove("modal-open");
+
+    }
 
 });
