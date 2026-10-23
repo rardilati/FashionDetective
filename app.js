@@ -271,6 +271,7 @@ function escapeHTML(value) {
 const movies = [
     {
         titulo: "El diablo viste de Prada",
+        imagen: "https://media.themoviedb.org/t/p/w600_and_h900_face/gvBvYFS9LVeukBYcdBX2HJZN4DL.jpg",
         año: 2006,
         pais: "Estados Unidos",
         genero: "Moda y drama",
@@ -305,6 +306,7 @@ const movies = [
 
     {
         titulo: "Cruella",
+        imagen: "https://media.themoviedb.org/t/p/w440_and_h660_face/tNFBP5OTmKm7CTc5ptUwgmepd8G.jpg",
         año: 2021,
         pais: "Estados Unidos",
         genero: "Moda y comedia dramática",
@@ -337,6 +339,7 @@ const movies = [
 
     {
         titulo: "Confessions of a Shopaholic",
+        imagen: "http://www.impawards.com/2009/posters/confessions_of_a_shopaholic.jpg",
         año: 2009,
         pais: "Estados Unidos",
         genero: "Comedia romántica",
@@ -395,7 +398,11 @@ function renderMovies() {
                 <article class="movie-card">
 
                     <div class="movie-image">
-                        🎬
+                         <img
+                            src="${escapeHTML(movie.imagen)}"
+                            alt="Imagen de ${escapeHTML(movie.titulo)}"
+                            loading="lazy"
+                         >
                     </div>
 
                     <div class="movie-info">
@@ -504,29 +511,29 @@ function openMovieInvestigation(movie) {
             <article>
                 <h3>🎨 Diseñadores</h3>
                 <p>${movie.diseñadores
-                    .map(escapeHTML)
-                    .join(", ")}</p>
+            .map(escapeHTML)
+            .join(", ")}</p>
             </article>
 
             <article>
                 <h3>🧥 Prendas</h3>
                 <p>${movie.prendas
-                    .map(escapeHTML)
-                    .join(", ")}</p>
+            .map(escapeHTML)
+            .join(", ")}</p>
             </article>
 
             <article>
                 <h3>🏛️ Marcas y maisons</h3>
                 <p>${movie.marcas
-                    .map(escapeHTML)
-                    .join(", ")}</p>
+            .map(escapeHTML)
+            .join(", ")}</p>
             </article>
 
             <article>
                 <h3>🧵 Textiles</h3>
                 <p>${movie.textiles
-                    .map(escapeHTML)
-                    .join(", ")}</p>
+            .map(escapeHTML)
+            .join(", ")}</p>
             </article>
 
             <article>

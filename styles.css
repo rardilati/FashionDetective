@@ -1149,6 +1149,13 @@ footer {
     font-size: 50px;
 }
 
+.movie-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .movie-info {
     padding: 25px;
 }
@@ -1444,4 +1451,35 @@ body.modal-open {
 
     }
 
+}
+
+/* 
+   IMÁGENES DE LAS PELÍCULAS
+                                */
+
+.movie-image {
+    height: 320px;
+    overflow: hidden;
+    background: var(--dark);
+}
+
+.movie-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.movie-card:hover .movie-image img {
+    transform: scale(1.04);
+}
+
+/* Ajustes para móvil */
+
+@media (max-width: 550px) {
+    .movie-image {
+        height: 280px;
+    }
 }
